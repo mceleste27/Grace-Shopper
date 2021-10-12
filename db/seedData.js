@@ -39,6 +39,7 @@ async function createTables() {
         id SERIAL PRIMARY KEY,
         "apparelId" INTEGER REFERENCES apparel(id),
         "cartId" INTEGER REFERENCES cart(id)
+        "usersId" INTEGER REFERENCES users(id)
       );
       CREATE TABLE apparel_size(
         id SERIAL PRIMARY KEY,
