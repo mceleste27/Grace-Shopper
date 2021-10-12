@@ -23,3 +23,8 @@ async function getApparelById(id) {
         throw error;
     }
 }
+
+module.exports = {
+    getAllApparel,
+    getApparelById
+}
