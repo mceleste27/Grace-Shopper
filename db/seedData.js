@@ -31,15 +31,10 @@ async function createTables() {
          price INTEGER,
          name VARCHAR(255) NOT NULL
       );
-      CREATE TABLE cart(
-        id SERIAL PRIMARY KEY,
-        "userId" INTEGER REFERENCES users(id)
-      );
-      CREATE TABLE cart_apparel(
+      CREATE TABLE apparel_cart(
         id SERIAL PRIMARY KEY,
         "apparelId" INTEGER REFERENCES apparel(id),
-        "cartId" INTEGER REFERENCES cart(id)
-        "usersId" INTEGER REFERENCES users(id)
+        "userId" INTEGER REFERENCES users(id)
       );
       CREATE TABLE apparel_size(
         id SERIAL PRIMARY KEY,

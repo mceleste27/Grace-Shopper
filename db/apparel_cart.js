@@ -1,3 +1,5 @@
+//update quantity and or delete
+
 async function getApparelCartById(id) {
     try {
         const { rows } = await client.query(`
