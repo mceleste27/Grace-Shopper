@@ -1,6 +1,6 @@
 async function getAllApparel() {
     try {
-        const {rows} = await client.query(`
+        const { rows } = await client.query(`
             SELECT * 
             FROM apparel
         `);
@@ -12,7 +12,7 @@ async function getAllApparel() {
 
 async function getApparelById(id) {
     try {
-        const {rows: [apparel]} = await client.query(`
+        const { rows: [apparel] } = await client.query(`
             SELECT * 
             FROM apparel
             WHERE id=${id}
