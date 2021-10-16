@@ -13,7 +13,7 @@ allInvRouter.get('/', async (req, res, next) => {
 allInvRouter.get('/:id', async (req, res, next) => {
     const {id} = req.params
     try {
-        const apparel = await getAllApparelById();
+        const apparel = await getAllApparelById(id);
         res.send(apparel);
 
     } catch (error) {
