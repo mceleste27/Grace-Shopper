@@ -56,7 +56,7 @@ async function destroyApparel(id) {
     try {
         const { rows } = await client.query(`
         DELETE FROM apparel_cart
-        WHERE "apparelId = ${id} 
+        WHERE "apparelId" = ${id} 
         `,[id]);
         return rows
     } catch (error) {

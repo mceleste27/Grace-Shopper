@@ -1,6 +1,8 @@
 const apiRouter = require('express').Router()
-const jwt = require('jsonwebtoken')
-const SECRET = require('./secret')
+const jwt = require('jsonwebtoken');
+const allInvRouter = require('./allInv');
+const SECRET = require('./secret');
+const sizeRouter = require('./size');
 
 
 
@@ -30,5 +32,9 @@ apiRouter.get('/health',(req, res, next)=>{
 
 
 apiRouter.use('/users', usersRouter);
+apiRouter.use('/allInv', allInvRouter);
+apiRouter.use('/size', sizeRouter);
+apiRouter.use('/apparel_cart', apprelCartRouter);
+apiRouter.use('/apparel_size', apparelSizeRouter);
 
 module.exports = apiRouter
