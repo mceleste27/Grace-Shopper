@@ -45,11 +45,39 @@ async function createTables() {
 }
 
 
+async function createInitialApparel() {
+  try {
+    console.log('Starting to create apparel...');
+
+    const apparelToCreate = [
+      {id:'1', name:'', type:'shirt', count:'', price:'$30'},
+      {id:'2', name:'', type:'shirt', count:'', price:'$30'},
+      {id:'3', name:'', type:'pants', count:'', price:'$25'},
+      {id:'4', name:'', type:'pants', count:'', price:'$25'},
+      {id:'5', name:'', type:'hat', count:'', price:'$15'},
+      {id:'6', name:'', type:'hat', count:'', price:'$15'},
+    ]
+    const apparel = await Promise.all(apparelToCreate.map(createApparel));
+
+    console.log('apparel created:');
+    console.log(apparel);
+
+    console.log('Finished creating apparel!');
+  } catch (error) {
+    console.error('Error creating apparel!');
+    throw error;
+  }
+}
+
+
+
+
 async function rebuildDB() {
     try {
         client.connect();
         await dropTables();
         await createTables();
+        await createInitialApparel();
     } catch (error) {
         console.log('Error during rebuildDB')
         throw error;

@@ -10,4 +10,14 @@ allInvRouter.get('/', async (req, res, next) => {
         next(error);
     }
 });
+allInvRouter.get('/:id', async (req, res, next) => {
+    const {id} = req.params
+    try {
+        const apparel = await getAllApparelById();
+        res.send(apparel);
+
+    } catch (error) {
+        next(error);
+    }
+});
 module.exports = allInvRouter
