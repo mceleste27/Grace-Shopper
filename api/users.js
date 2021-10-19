@@ -1,3 +1,6 @@
+// POST  /CART
+// GET / CART
+
 const usersRouter = require('express').Router();
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = require('./secret');
@@ -36,5 +39,7 @@ usersRouter.post('/login', async (req, res, next) => {
         next(error);
     }
 });
+
+
 
 module.exports = usersRouter;

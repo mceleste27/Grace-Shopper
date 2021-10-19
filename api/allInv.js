@@ -1,3 +1,5 @@
+// POST REQUEST
+
 const allInvRouter = require('express').Router();
 const {getAllApparel, getApparelById} = require('../db')
 
