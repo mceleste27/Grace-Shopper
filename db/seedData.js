@@ -50,12 +50,11 @@ async function createInitialApparel() {
     console.log('Starting to create apparel...');
 
     const apparelToCreate = [
-      {id:'1', name:'', type:'shirt', count:'', price:'$30'},
-      {id:'2', name:'', type:'shirt', count:'', price:'$30'},
-      {id:'3', name:'', type:'pants', count:'', price:'$25'},
-      {id:'4', name:'', type:'pants', count:'', price:'$25'},
-      {id:'5', name:'', type:'hat', count:'', price:'$15'},
-      {id:'6', name:'', type:'hat', count:'', price:'$15'},
+      {id:'1', name:'Black', type:'shirt', count:'', price:'$30'},
+      {id:'2', name:'Blue', type:'shirt', count:'', price:'$30'},
+      {id:'3', name:'Red', type:'shirt', count:'', price:'$30'},
+      {id:'4', name:'Orange', type:'shirt', count:'', price:'$30'},
+     
     ]
     const apparel = await Promise.all(apparelToCreate.map(createApparel));
 
