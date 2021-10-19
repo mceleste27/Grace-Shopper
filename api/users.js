@@ -1,5 +1,5 @@
-// POST  /CART
-// GET / CART
+// POST  /apparel_CART
+// GET / apaprel_CART
 
 const usersRouter = require('express').Router();
 const jwt = require('jsonwebtoken');
@@ -40,6 +40,13 @@ usersRouter.post('/login', async (req, res, next) => {
     }
 });
 
+apparelCartRouter.post('/', async (req, res, next)=>{
+
+})
+
+apparelCartRouter.get('/', async (req, res, next)=>{
+    
+})
 
 
 module.exports = usersRouter;

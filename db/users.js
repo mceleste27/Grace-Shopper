@@ -63,7 +63,6 @@ async function getUserByUsername(username) {
         return user
     } catch (error) {
         console.error(error)
-
     }
 }
 
