@@ -1,7 +1,7 @@
-// POST REQUEST
+
 
 const allInvRouter = require('express').Router();
-const {getAllApparel, getApparelById} = require('../db')
+const { getAllApparel, getApparelById, createApparel } = require('../db')
 
 allInvRouter.get('/', async (req, res, next) => {
     try {
@@ -13,7 +13,7 @@ allInvRouter.get('/', async (req, res, next) => {
     }
 });
 allInvRouter.get('/:id', async (req, res, next) => {
-    const {id} = req.params
+    const { id } = req.params
     try {
         const apparel = await getAllApparelById(id);
         res.send(apparel);
@@ -22,4 +22,13 @@ allInvRouter.get('/:id', async (req, res, next) => {
         next(error);
     }
 });
+
+allInvRouter.post('/' , async (req, res, next) => {
+    try {
+        const createApparel = await createApparel(req.body)
+        res.send(createApparel)
+    } catch (error) {
+        next(error)
+    }
+})
 module.exports = allInvRouter
