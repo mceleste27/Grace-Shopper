@@ -1,3 +1,6 @@
+const client = require("./client.js");
+
+
 async function getAllApparel() {
     try {
         const { rows } = await client.query(`
@@ -5,7 +8,7 @@ async function getAllApparel() {
             FROM apparel
         `);
         return rows;
-    } catch {
+    } catch(error) {
         throw error;
     }
 }

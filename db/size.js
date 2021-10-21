@@ -1,3 +1,5 @@
+const client = require("./client.js");
+
 async function getSizeById(id) {
     try {
         const { rows } = await client.query(`

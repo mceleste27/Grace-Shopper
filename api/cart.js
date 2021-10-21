@@ -1,4 +1,5 @@
 const apparelCartRouter = require('express').Router();
+
 const {getApparelCartById, getApparelCartByUserId, updateApparelQuantity} = require('../db');
 
 apparelCartRouter.post("/", async (req, res, next) => {
