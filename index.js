@@ -7,7 +7,7 @@ const PORT = 3000
 const client = require ('./db/client')
 client.connect()
 
-const apiRouter = require('./api')
+const apiRouter = require('./api');
 
 
 
