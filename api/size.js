@@ -6,7 +6,7 @@ sizeRouter.get('/', async (req, res, next) => {
         const size = await getSizeById();
         res.send(size)
     } catch (error) {
-        next(Error)
+        next(error)
     }
 })
 

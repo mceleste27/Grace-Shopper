@@ -33,7 +33,7 @@ apiRouter.get('/health',(req, res, next)=>{
 apiRouter.use('/users', usersRouter);
 apiRouter.use('/allInv', allInvRouter);
 apiRouter.use('/size', sizeRouter);
-apiRouter.use('/apparel_cart', apparelCartRouter);
-apiRouter.use('/apparel_size', apparelSizeRouter);
+apiRouter.use('/users', apparelCartRouter);
+
 
 module.exports = apiRouter
