@@ -5,7 +5,6 @@ const SECRET = require('./secret');
 const sizeRouter = require('./size');
 
 
-
 const usersRouter = require('./users')
 apiRouter.use(async (req, res, next) => {
     if(req.header('Authorization')) {
@@ -34,7 +33,7 @@ apiRouter.get('/health',(req, res, next)=>{
 apiRouter.use('/users', usersRouter);
 apiRouter.use('/allInv', allInvRouter);
 apiRouter.use('/size', sizeRouter);
-apiRouter.use('/apparel_cart', apprelCartRouter);
+apiRouter.use('/apparel_cart', apparelCartRouter);
 apiRouter.use('/apparel_size', apparelSizeRouter);
 
 module.exports = apiRouter

@@ -6,7 +6,7 @@ async function dropTables() {
     await client.query(`
     DROP TABLE IF EXISTS apparel_size;
     DROP TABLE IF EXISTS cart_apparel;
-    DROP TABLE IF EXISTS cart ;
+    DROP TABLE IF EXISTS cart;
     DROP TABLE IF EXISTS apparel;
     DROP TABLE IF EXISTS size;
     DROP TABLE IF EXISTS users;
