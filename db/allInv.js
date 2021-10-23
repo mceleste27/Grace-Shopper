@@ -28,14 +28,14 @@ async function getApparelById(id) {
 }
 
 
-async function createApparel({id, type, count, price, name}) {
+async function createApparel({ type, count, price, name}) {
     try {
         const queryString = `
-            INSERT INTO apparel({id, type, count, price, name)
-            VALUES($1, $2, $3, $3, $4)
+            INSERT INTO apparel( type, count, price, name)
+            VALUES($1, $2, $3, $4)
             RETURNING *;
         `;
-        const {rows} = await client.query(queryString, [id, type, count, price, name]);
+        const {rows} = await client.query(queryString, [ type, count, price, name]);
         return rows;
     } catch (error) {
         throw error;

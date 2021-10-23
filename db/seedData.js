@@ -1,4 +1,5 @@
 const client = require('./client');
+const { createApparel }= require('./')
 
 async function dropTables() {
     console.log('Dropping All Tables...');
@@ -6,9 +7,9 @@ async function dropTables() {
     await client.query(`
     DROP TABLE IF EXISTS apparel_size;
     DROP TABLE IF EXISTS apparel_cart;
-    DROP TABLE IF EXISTS apparel;
+    DROP TABLE IF EXISTS apparel CASCADE;
     DROP TABLE IF EXISTS size;
-    DROP TABLE IF EXISTS users;
+    DROP TABLE IF EXISTS users CASCADE;
     `)
 }
 
@@ -25,9 +26,9 @@ async function createTables() {
       );
       CREATE TABLE apparel(
          id SERIAL PRIMARY KEY,
-         type UPPER(string),
+         type VARCHAR(255),
          count INTEGER,
-         price INTEGER,
+         price VARCHAR(255),
          name VARCHAR(255) NOT NULL
       );
       CREATE TABLE apparel_cart(
@@ -49,10 +50,10 @@ async function createInitialApparel() {
     console.log('Starting to create apparel...');
 
     const apparelToCreate = [
-      {id:'1', name:'Black', type:'shirt', count:'', price:'$30'},
-      {id:'2', name:'Blue', type:'shirt', count:'', price:'$30'},
-      {id:'3', name:'Red', type:'shirt', count:'', price:'$30'},
-      {id:'4', name:'Orange', type:'shirt', count:'', price:'$30'},
+      {id:'1', name:'Black', type:'shirt', count:0, price:'$30'},
+      {id:'2', name:'Blue', type:'shirt', count:0, price:'$30'},
+      {id:'3', name:'Red', type:'shirt', count:0, price:'$30'},
+      {id:'4', name:'Orange', type:'shirt', count: 0, price:'$30'},
      
     ]
     const apparel = await Promise.all(apparelToCreate.map(createApparel));
