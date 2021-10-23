@@ -3,7 +3,7 @@ const server = express()
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const PORT = 3000
+const { PORT = 3000 } = process.env;
 const client = require ('./db/client')
 client.connect()
 
