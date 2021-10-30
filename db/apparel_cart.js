@@ -64,11 +64,24 @@ async function destroyApparel(id) {
 
     }
 }
+async function addToCart(apparelId, userId){
+    try {
+        const { rows }= await client.query(`
+        INSERT INTO apparel_cart("apparelId", "userId")
+        VALUES($1, $2);
+        `,[apparelId, userId]);
+        return rows
+    } catch (error) {
+        console.log(error)
+        
+    }
+}
 
 module.exports = {
     getApparelCartById,
     getApparelCartByApparel,
     getApparelCartByUserId,
     updateApparelQuantity,
-    destroyApparel
+    destroyApparel,
+    addToCart
 }
