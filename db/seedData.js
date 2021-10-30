@@ -80,7 +80,7 @@ async function rebuildDB() {
         await createTables();
         await createInitialApparel();
     } catch (error) {
-        console.log('Error during rebuildDB')
+        console.log(error)
         throw error;
     }
 }
