@@ -30,7 +30,7 @@ async function createTables() {
          count INTEGER,
          price VARCHAR(255),
          name VARCHAR(255) NOT NULL,
-         img VARCHAR(255)
+         image VARCHAR(255) 
       );
       CREATE TABLE apparel_cart(
         id SERIAL PRIMARY KEY,
@@ -51,11 +51,11 @@ async function createInitialApparel() {
     console.log('Starting to create apparel...');
 
     const apparelToCreate = [
-      {id:'1', name:'Black',img:'doubleBlack.png', type:'shirt', count:0, price:'$30'},
-      {id:'2', name:'White',img:'doubleWhite.png', type:'shirt', count:0, price:'$30'},
-      {id:'3', name:'Red', img:'doubleRed.png', type:'shirt', count:0, price:'$30'},
-      {id:'4', name:'Orange',img:'doubleOrange.png', type:'shirt', count: 0, price:'$30'},
-      {id:'4', name:'Blue',img:'doubleBlue.png', type:'shirt', count: 0, price:'$30'}
+      {id:'1', name:'Black', image:'doubleBlack.png', type:'shirt', count:0, price:'$30'},
+      {id:'2', name:'White', image:'doubleWhite.png', type:'shirt', count:0, price:'$30'},
+      {id:'3', name:'Red', image:'doubleRed.png', type:'shirt', count:0, price:'$30'},
+      {id:'4', name:'Orange', image:'doubleOrange.png', type:'shirt', count: 0, price:'$30'},
+      {id:'5', name:'Blue', image:'doubleBlue.png', type:'shirt', count: 0, price:'$30'}
      
     ]
     const apparel = await Promise.all(apparelToCreate.map(createApparel));
