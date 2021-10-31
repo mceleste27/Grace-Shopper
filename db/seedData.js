@@ -30,7 +30,7 @@ async function createTables() {
          count INTEGER,
          price VARCHAR(255),
          name VARCHAR(255) NOT NULL,
-         image VARCHAR(255) UNIQUE NOT NULL,
+         image VARCHAR(255) UNIQUE NOT NULL
       );
       CREATE TABLE apparel_cart(
         id SERIAL PRIMARY KEY,
